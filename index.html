@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Symbioz Utils</title>
+  <link rel="stylesheet" type="text/css" href="output.css" />
+</head>
+
+<body>
+  <div class="title">
+    <div id="title">SymbiozUtils</div>
+    <button onclick="alert('close')" id="close">X</button>
+    <button onClick="alert('reduce')">_</button>
+    <div style="clear: both;"></div>
+  </div>
+  <div class="nav">
+    <a onclick="alert('home')">home</a> >
+    <a onclick="alert('home')">home</a> >
+    <a onclick="alert('home')">home</a>
+  </div>
+  <div id="target">
+  </div>
+  <script>
+    const id = i => { return document.getElementById(i); };
+    const package = require('./package.json');
+    id('title').innerHTML = 'Symbioz Utils v' + package.version;
+
+    // You can also require other files to run in this process
+    //require('./renderer.js')
+
+    const Mustache = require('mustache');
+    const fs = require('fs');
+    fs.readFile('templates/home.html', 'utf-8', (err, data) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      let rendered = Mustache.render(data, { friend: 'bob' });
+      id('target').innerHTML = rendered;
+    });
+
+  </script>
+</body>
+
+</html>

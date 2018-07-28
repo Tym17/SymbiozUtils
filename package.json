@@ -1,0 +1,25 @@
+{
+  "name": "symbiozutils",
+  "version": "1.0.0",
+  "author": {
+    "name": "Tym17",
+    "url": "https://Tym17.com"
+  },
+  "description": "A minimal utility tool to administrate a Symbioz2.38 server",
+  "main": "main.js",
+  "config": {
+    "debugmode": true
+  },
+  "scripts": {
+    "start": "electron .",
+    "sass": "sass --watch scss/main.scss output.css",
+    "sass:build": "sass scss/main.scss output.css"
+  },
+  "dependencies": {
+    "mustache": "^2.3.0",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "electron": "^2.0.5"
+  }
+}

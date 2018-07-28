@@ -1,0 +1,16 @@
+@import 'colors';
+@import 'buttons';
+@import 'title';
+
+body
+{
+    background-color: $brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 45px;
+};
+
+#target
+{
+    width: 100%;
+    border:  1px solid red;
+}
