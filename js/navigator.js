@@ -1,3 +1,4 @@
+const { shell, remote } = require('electron');
 const Mustache = require('mustache');
 const fs = require('fs');
 
@@ -17,6 +18,20 @@ let Navigator = {
 
     makePath: function(args) {
         console.log(args);
+    },
+
+    url: function(u) {
+        shell.openExternal(u);
+    },
+
+    quit: function() {
+        let window = remote.getCurrentWindow();
+        window.close();
+    },
+
+    reduce: function() {
+        let window = remote.getCurrentWindow();
+        window.minimize();
     }
 }
 

@@ -1,0 +1,14 @@
+.menu
+{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+
+    button
+    {
+        font-size: 17px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+}

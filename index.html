@@ -10,8 +10,8 @@
 <body>
   <div class="title">
     <div id="title">SymbiozUtils</div>
-    <button onclick="alert('close')" id="close">X</button>
-    <button onClick="alert('reduce')">_</button>
+    <button onclick="navigator.quit()" id="close">X</button>
+    <button onClick="navigator.reduce()">_</button>
     <div style="clear: both;"></div>
   </div>
   <div class="nav" id="nav">
@@ -24,7 +24,7 @@
     const package = require('./package.json');
     let navigator = new require('./js/navigator.js');
     console.log(navigator);
-    id('title').innerHTML = 'Symbioz Utils v' + package.version;
+    id('title').innerHTML = 'Symbioz Utils v' + package.version + ' - Tym17.com';
     navigator.navigate('home', {version: package.version});
     // You can also require other files to run in this process
     //require('./renderer.js')
