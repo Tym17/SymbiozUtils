@@ -1,0 +1,9 @@
+{
+    "address": "localhost",
+    "user": "user",
+    "password": "password",
+    "symbioz": {
+        "auth": "symbioz_auth",
+        "world": "symbioz_world"
+    }
+}

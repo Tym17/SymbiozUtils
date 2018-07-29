@@ -1,0 +1,27 @@
+.larger-menu
+{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+
+    button
+    {
+        font-size: 15px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        min-width: 20%;
+    }
+
+    .right
+    {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .left
+    {
+        display: flex;
+        flex-direction: row;
+    }
+}
