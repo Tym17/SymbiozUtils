@@ -1,0 +1,18 @@
+@import 'colors';
+
+button
+{
+    background: $orange;
+    color: white;
+    border: none;
+    border-bottom: $darkorange solid 2px;
+    border-radius: .25rem;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+}
+
+button:hover
+{
+    background: $darkorange;
+    border-bottom: darken($darkorange, 15) solid 2px;
+}

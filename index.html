@@ -14,31 +14,20 @@
     <button onClick="alert('reduce')">_</button>
     <div style="clear: both;"></div>
   </div>
-  <div class="nav">
-    <a onclick="alert('home')">home</a> >
-    <a onclick="alert('home')">home</a> >
-    <a onclick="alert('home')">home</a>
+  <div class="nav" id="nav">
+    <a onclick="navigator.navigate('home', {version: package.version})">Home</a>
   </div>
   <div id="target">
   </div>
   <script>
     const id = i => { return document.getElementById(i); };
     const package = require('./package.json');
+    let navigator = new require('./js/navigator.js');
+    console.log(navigator);
     id('title').innerHTML = 'Symbioz Utils v' + package.version;
-
+    navigator.navigate('home', {version: package.version});
     // You can also require other files to run in this process
     //require('./renderer.js')
-
-    const Mustache = require('mustache');
-    const fs = require('fs');
-    fs.readFile('templates/home.html', 'utf-8', (err, data) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      let rendered = Mustache.render(data, { friend: 'bob' });
-      id('target').innerHTML = rendered;
-    });
 
   </script>
 </body>

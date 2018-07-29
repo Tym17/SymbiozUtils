@@ -26,7 +26,7 @@
         float: right;
         border: none;
         color: white;
-        background: $darkgreen;
+        background: $green;
         height: 25px;
         width: 45px;
         transition-duration: 0.2s;
@@ -36,19 +36,14 @@
     
     button:hover
     {
-        background: darken($darkgreen, 5);
+        background: darken($green, 5);
         color: darken(white, 5);
         cursor: pointer;
-    }
-    
-    #close
-    {
-        background: mix($darkgreen, red, 80);
     }
 
     #close:hover
     {
-        background: darken(mix($darkgreen, red, 80), 5);
+        background: mix($darkgreen, red, 80);
     }
 
 }
