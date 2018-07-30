@@ -30,7 +30,7 @@ let userManager = {
                     navigator.navigate('error', {error: err});
                     return ;
                 }
-                navigator.navigate('home', {version: 'lol'});
+                navigator.navigate('creator', {success: 'Created'});
             }
         )
     }
