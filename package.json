@@ -13,11 +13,12 @@
   "scripts": {
     "start": "electron .",
     "sass": "sass --watch scss/main.scss output.css",
-    "sass:build": "sass scss/main.scss output.css"
+    "sass:build": "sass scss/main.scss output.css",
+    "all": "yarn sass & yarn start"
   },
   "dependencies": {
     "mustache": "^2.3.0",
-    "sequelize": "^4.38.0"
+    "mysql2": "^1.5.3"
   },
   "devDependencies": {
     "electron": "^2.0.5"

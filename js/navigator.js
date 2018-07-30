@@ -17,7 +17,7 @@ let Navigator = {
     },
 
     makePath: function(args) {
-        console.log(args);
+        // If apps gets too complicated modify the link chain in the nav element here.
     },
 
     url: function(u) {

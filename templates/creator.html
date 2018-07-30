@@ -1,6 +1,33 @@
 <h1>Account creator</h1>
 <div class="larger-menu">
+    <div class="left">
+        <div class="column" style="width: 50%;">
+            <label for="accname">Account Name:</label>
+            <input type="text" id="accname" minlength="2" />
+        </div>
+        <div class="column" style="width: 50%;">
+            <label for="password">Password:</label>
+            <input type="text" id="password" minlength="2" />
+            <div style="color: red; text-align: justify; margin-top: -20px; font-size: 10px; padding: 5px;">Symbioz do not seem to use hashed password so please do not put a password you use anywhere as it might get compromised.</div>
+        </div>
+    </div>
+    <div class="left">
+        <div class="column" style="width: 50%;">
+            <label for="nickname">NickName:</label>
+            <input type="text" id="nickname" minlength="2" />
+        </div>
+        <div class="column" style="width: 50%;">
+            <label for="role">Role:</label>
+            <select id="role" >
+                <option value="40">Admin</option>
+                <option value="20">Mod</option>
+                <option value="1" selected>User</option>
+            </select>
+        </div>
+    </div>
+
+    </label>
     <div class="right">
-        <button onclick="navigator.navigate('charfinder', {})">Create</button>
+        <button onclick="userManager.create()">Create</button>
     </div>
 </div>
