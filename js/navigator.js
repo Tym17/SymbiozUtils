@@ -1,6 +1,7 @@
 const { shell, remote } = require('electron');
 const Mustache = require('mustache');
 const fs = require('fs');
+const _ = require('lodash');
 
 let Navigator = {
 
@@ -13,6 +14,9 @@ let Navigator = {
             }
             let rendered = Mustache.render(data, args);
             id('target').innerHTML = rendered;
+            if (_.has(args, '_callback')) {
+                args._callback();
+            }
         });
     },
 

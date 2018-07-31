@@ -1,23 +1,24 @@
-<h1>Account creator</h1>
+<h1>{{user.Username}}</h1>
 <div class="larger-menu">
     <div class="left font-green">
         {{success}}
     </div>
+    <input type="hidden" id="uid" value="{{user.Id}}"/>
     <div class="left">
         <div class="column" style="width: 50%;">
             <label for="accname">Account Name:</label>
-            <input type="text" id="accname" minlength="2" />
+            <input type="text" id="accname" minlength="2" value="{{user.Username}}"/>
         </div>
         <div class="column" style="width: 50%;">
             <label for="password">Password:</label>
-            <input type="text" id="password" minlength="2" />
+            <input type="text" id="password" minlength="2" value="{{user.Password}}"/>
             <div style="color: red; text-align: justify; margin-top: -20px; font-size: 10px; padding: 5px;">Symbioz do not seem to use hashed password so please do not put a password you use anywhere as it might get compromised.</div>
         </div>
     </div>
     <div class="left">
         <div class="column" style="width: 50%;">
             <label for="nickname">NickName:</label>
-            <input type="text" id="nickname" minlength="2" />
+            <input type="text" id="nickname" minlength="2" value="{{user.Nickname}}"/>
         </div>
         <div class="column" style="width: 50%;">
             <label for="role">Role:</label>
@@ -30,6 +31,6 @@
     </div>
 
     <div class="right">
-        <button onclick="userManager.create()">Create</button>
+        <button onclick="userManager.update()">Update</button>
     </div>
 </div>

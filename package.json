@@ -17,6 +17,7 @@
     "all": "yarn sass & yarn start"
   },
   "dependencies": {
+    "lodash": "^4.17.10",
     "mustache": "^2.3.0",
     "mysql2": "^1.5.3"
   },
