@@ -91,7 +91,7 @@ let userManager = {
                 navigator.navigate('user', {
                     user: results[0],
                     _callback: function() {
-                        let sel = id('role').value = results[0].role;
+                        let sel = id('role').value = results[0].Role;
                     }
                 });
             }
@@ -116,7 +116,7 @@ let userManager = {
         let query = fs.readFileSync(__dirname + '/../sql/update_user.sql', 'utf8');
 
         con.execute(query,
-            [accname, password, nickname, role],
+            [accname, nickname, password, role, uid],
             (err, results, fields) => {
                 if (err) {
                     navigator.navigate('error', {error: err});
