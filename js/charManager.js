@@ -45,10 +45,10 @@ let charManager = {
             host: db.host,
             user: db.user,
             password: db.password,
-            database: db.symbioz.auth
+            database: db.symbioz.world
         });
 
-        let query = fs.readFileSync(__dirname + '/../sql/get_user.sql', 'utf8');
+        let query = fs.readFileSync(__dirname + '/../sql/get_char.sql', 'utf8');
 
         con.execute(query,
             [selected],
@@ -57,15 +57,12 @@ let charManager = {
                     navigator.navigate('error', {error: err});
                     return ;
                 } else if (results.length === 0) {
-                    navigator.navigate('error', {error: 'No account found'});
+                    navigator.navigate('error', {error: 'No character found'});
                     return ;
                 }
                 
-                navigator.navigate('user', {
-                    user: results[0],
-                    _callback: function() {
-                        let sel = id('role').value = results[0].Role;
-                    }
+                navigator.navigate('charpage', {
+                    char: results[0]
                 });
             }
         );
@@ -73,6 +70,12 @@ let charManager = {
 
     // TODO
     update: function() {
+        /**
+         * Kamas
+         * SpellPoints
+         * StatsPoints
+         * SpawnPointMapId
+         */
         let accname = id('accname').value;
         let password = id('password').value;
         let nickname = id('nickname').value;
