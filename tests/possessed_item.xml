@@ -1,0 +1,22 @@
+<ListOfEffect xmlns:yaxlib="http://www.sinairv.com/yaxlib/">
+  <Effect yaxlib:realtype="Symbioz.World.Models.Effects.EffectInteger">
+    <Value>5</Value>
+    <EffectId>123</EffectId>
+  </Effect>
+  <Effect yaxlib:realtype="Symbioz.World.Models.Effects.EffectInteger">
+    <Value>7</Value>
+    <EffectId>118</EffectId>
+  </Effect>
+  <Effect yaxlib:realtype="Symbioz.World.Models.Effects.EffectInteger">
+    <Value>5</Value>
+    <EffectId>119</EffectId>
+  </Effect>
+  <Effect yaxlib:realtype="Symbioz.World.Models.Effects.EffectInteger">
+    <Value>7</Value>
+    <EffectId>126</EffectId>
+  </Effect>
+  <Effect yaxlib:realtype="Symbioz.World.Models.Effects.EffectInteger">
+    <Value>2</Value>
+    <EffectId>115</EffectId>
+  </Effect>
+</ListOfEffect>

@@ -1,0 +1,30 @@
+<ListOfEffectInstance>
+  <EffectInstance>
+    <TargetMask></TargetMask>
+    <EffectUID>0</EffectUID>
+    <RawZone>C</RawZone>
+    <EffectId>126</EffectId>
+    <DiceMin>5</DiceMin>
+    <Duration>0</Duration>
+    <DiceMax>7</DiceMax>
+    <Value>0</Value>
+    <Delay>0</Delay>
+    <Random>0</Random>
+    <Triggers />
+    <EffectElement>-1</EffectElement>
+  </EffectInstance>
+  <EffectInstance>
+    <TargetMask></TargetMask>
+    <EffectUID>0</EffectUID>
+    <RawZone>C</RawZone>
+    <EffectId>424</EffectId>
+    <DiceMin>2</DiceMin>
+    <Duration>0</Duration>
+    <DiceMax>0</DiceMax>
+    <Value>0</Value>
+    <Delay>0</Delay>
+    <Random>0</Random>
+    <Triggers />
+    <EffectElement>-1</EffectElement>
+  </EffectInstance>
+</ListOfEffectInstance>
