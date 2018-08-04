@@ -2,6 +2,7 @@ const mysql = require('mysql2');
 const db = require('../dbconf.json');
 const fs = require('fs');
 const navigator = require('./navigator');
+const utilities = require('./utilities');
 
 let charManager = {
 
@@ -62,13 +63,17 @@ let charManager = {
                 }
                 
                 navigator.navigate('charpage', {
-                    char: results[0]
+                    char: results[0],
+                    _callback: function() {
+                        utilities.updateNumber('Kamas');
+                        utilities.updateNumber('SpellPoints');
+                        utilities.updateNumber('StatsPoints');
+                    }
                 });
             }
         );
     },
 
-    // TODO
     update: function() {
         /**
          * Kamas
@@ -76,30 +81,29 @@ let charManager = {
          * StatsPoints
          * SpawnPointMapId
          */
-        let accname = id('accname').value;
-        let password = id('password').value;
-        let nickname = id('nickname').value;
+        let Kamas = id('Kamas').value.split(' ').join('');
+        let SpellPoints = id('SpellPoints').value.split(' ').join('');
+        let StatsPoints = id('StatsPoints').value.split(' ').join('');
+        let SpawnPointMapId = id('SpawnPointMapId').value;
         let uid = id('uid').value;
-        let roleSelect = id('role');
-        let role = roleSelect.options[roleSelect.selectedIndex].value;
 
         const con = mysql.createConnection({
             host: db.host,
             user: db.user,
             password: db.password,
-            database: db.symbioz.auth
+            database: db.symbioz.world
         });
 
-        let query = fs.readFileSync(__dirname + '/../sql/update_user.sql', 'utf8');
+        let query = fs.readFileSync(__dirname + '/../sql/update_char.sql', 'utf8');
 
         con.execute(query,
-            [accname, nickname, password, role, uid],
+            [Kamas, SpellPoints, StatsPoints, SpawnPointMapId, uid],
             (err, results, fields) => {
                 if (err) {
                     navigator.navigate('error', {error: err});
                     return ;
                 }
-                navigator.navigate('accfinder', {success: 'Updated'});
+                navigator.navigate('charfinder', {success: 'Updated'});
             }
         );
     }

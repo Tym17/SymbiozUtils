@@ -13,15 +13,15 @@
     <div class="left">
         <div class="column" style="width: 25%;">
             <label for="Kamas">Kamas:</label>
-            <input type="text" id="Kamas" minlength="2" value="{{char.Kamas}}"/>
+            <input type="text" id="Kamas" minlength="0" value="{{char.Kamas}}" oninput="utilities.updateNumber('Kamas')"/>
         </div>
         <div class="column" style="width: 25%;">
             <label for="SpellPoints">SpellPoints:</label>
-            <input type="text" id="SpellPoints" minlength="2" value="{{char.SpellPoints}}"/>
+            <input type="text" id="SpellPoints" minlength="0" value="{{char.SpellPoints}}"/>
         </div>
         <div class="column" style="width: 25%;">
             <label for="StatsPoints">StatsPoints:</label>
-            <input type="text" id="StatsPoints" minlength="2" value="{{char.StatsPoints}}"/>
+            <input type="text" id="StatsPoints" minlength="0" value="{{char.StatsPoints}}"/>
         </div>
         <div class="column" style="width: 25%;">
             <label for="SpawnPointMapId">SpawnPointMapId:</label>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="right">
-        <button onclick="userManager.update()">Update</button>
+        <button onclick="charManager.update()">Update</button>
         <button onclick="userManager.update()">Edit Stats</button>
         <button onclick="userManager.update()">FM Item</button>
     </div>
