@@ -1,4 +1,4 @@
-# SymbiozCLI
+# SymbiozUtils
 
 ## Install & run
 ```
