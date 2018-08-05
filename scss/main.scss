@@ -9,11 +9,22 @@
 body
 {
     background-color: $darkbrown;
+    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 50px;
     box-sizing: border-box;
     color: darken($darkbrown, 20);
 };
+
+.overtarget
+{
+    overflow: auto;
+    position: absolute;
+    top: 60px;
+    bottom: 10px;
+    right: 8px;
+    left: 8px;
+}
 
 #target
 {
@@ -25,7 +36,6 @@ body
     padding-top: 10px;
     padding-bottom: 30px;
     box-sizing: border-box;
-    overflow: auto;
 }
 
 #effects
