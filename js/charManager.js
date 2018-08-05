@@ -3,6 +3,7 @@ const db = require('../dbconf.json');
 const fs = require('fs');
 const navigator = require('./navigator');
 const utilities = require('./utilities');
+const fixtures = require('./fixtures');
 
 let charManager = {
 
@@ -23,10 +24,9 @@ let charManager = {
         con.execute(query,
             [search],
             (err, results, fields) => {
-                console.log(results);
                 if (err) {
-                    navigator.navigate('error', {error: err});
-                    return ;
+                    navigator.navigate('error', { error: err });
+                    return;
                 }
                 results.forEach(x => {
                     let opt = document.createElement('option');
@@ -38,7 +38,7 @@ let charManager = {
         );
     },
 
-    goToEdit: function() {
+    goToEdit: function () {
         let selector = id('selector');
         let selected = selector.options[selector.selectedIndex].value;
 
@@ -55,16 +55,16 @@ let charManager = {
             [selected],
             (err, results, fields) => {
                 if (err) {
-                    navigator.navigate('error', {error: err});
-                    return ;
+                    navigator.navigate('error', { error: err });
+                    return;
                 } else if (results.length === 0) {
-                    navigator.navigate('error', {error: 'No character found'});
-                    return ;
+                    navigator.navigate('error', { error: 'No character found' });
+                    return;
                 }
-                
+
                 navigator.navigate('charpage', {
                     char: results[0],
-                    _callback: function() {
+                    _callback: function () {
                         utilities.updateNumber('Kamas');
                         utilities.updateNumber('SpellPoints');
                         utilities.updateNumber('StatsPoints');
@@ -74,13 +74,44 @@ let charManager = {
         );
     },
 
-    update: function() {
-        /**
-         * Kamas
-         * SpellPoints
-         * StatsPoints
-         * SpawnPointMapId
-         */
+    toFM: function () {
+        let uid = id('uid').value;
+
+        navigator.navigate('itemfinder', {
+            char: {
+                Id: uid
+            },
+            _callback: function () {
+                let selector = id('selector');
+
+                const con = mysql.createConnection({
+                    host: db.host,
+                    user: db.user,
+                    password: db.password,
+                    database: db.symbioz.world
+                });
+
+                let query = fs.readFileSync(__dirname + '/../sql/get_char_items.sql', 'utf8');
+
+                con.query(query,
+                    [uid, fixtures.getWearableItemTypes()],
+                    (err, results, fields) => {
+                console.log(results);
+
+                        results.forEach(r => {
+                            let opt = document.createElement('option');
+                            opt.value = r.UId;
+                            opt.innerHTML = r.Name;
+                            selector.appendChild(opt);
+                        })
+                    }
+                );
+
+            }
+        })
+    },
+
+    update: function () {
         let Kamas = id('Kamas').value.split(' ').join('');
         let SpellPoints = id('SpellPoints').value.split(' ').join('');
         let StatsPoints = id('StatsPoints').value.split(' ').join('');
@@ -100,10 +131,10 @@ let charManager = {
             [Kamas, SpellPoints, StatsPoints, SpawnPointMapId, uid],
             (err, results, fields) => {
                 if (err) {
-                    navigator.navigate('error', {error: err});
-                    return ;
+                    navigator.navigate('error', { error: err });
+                    return;
                 }
-                navigator.navigate('charfinder', {success: 'Updated'});
+                navigator.navigate('charfinder', { success: 'Updated' });
             }
         );
     }
