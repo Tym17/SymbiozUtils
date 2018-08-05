@@ -8,13 +8,12 @@
   "description": "A minimal utility tool to administrate a Symbioz2.38 server",
   "main": "main.js",
   "config": {
-    "debugmode": true
+    "debugmode": false
   },
   "scripts": {
     "start": "electron .",
     "sass": "sass --watch scss/main.scss output.css",
-    "sass:build": "sass scss/main.scss output.css",
-    "all": "yarn sass & yarn start"
+    "sass:build": "sass scss/main.scss output.css"
   },
   "dependencies": {
     "lodash": "^4.17.10",

@@ -54,7 +54,7 @@ let fixtures = {
             'Escape': 752,
             'Tacle': 753,
 
-            'DofusSideEffect': 984,
+            'EggSideEffect': 984,
         }
     }
 }

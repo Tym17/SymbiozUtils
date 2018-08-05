@@ -3,10 +3,10 @@
     <TargetMask></TargetMask>
     <EffectUID>0</EffectUID>
     <RawZone>C</RawZone>
-    <EffectId>124</EffectId>
-    <DiceMin>7</DiceMin>
+    <EffectId>174</EffectId>
+    <DiceMin>51</DiceMin>
     <Duration>0</Duration>
-    <DiceMax>10</DiceMax>
+    <DiceMax>100</DiceMax>
     <Value>0</Value>
     <Delay>0</Delay>
     <Random>0</Random>
@@ -17,11 +17,25 @@
     <TargetMask></TargetMask>
     <EffectUID>0</EffectUID>
     <RawZone>C</RawZone>
-    <EffectId>422</EffectId>
+    <EffectId>161</EffectId>
     <DiceMin>1</DiceMin>
     <Duration>0</Duration>
-    <DiceMax>0</DiceMax>
+    <DiceMax>2</DiceMax>
     <Value>0</Value>
+    <Delay>0</Delay>
+    <Random>0</Random>
+    <Triggers />
+    <EffectElement>-1</EffectElement>
+  </EffectInstance>
+  <EffectInstance>
+    <TargetMask></TargetMask>
+    <EffectUID>0</EffectUID>
+    <RawZone>C</RawZone>
+    <EffectId>983</EffectId>
+    <DiceMin>0</DiceMin>
+    <Duration>0</Duration>
+    <DiceMax>0</DiceMax>
+    <Value>62</Value>
     <Delay>0</Delay>
     <Random>0</Random>
     <Triggers />
