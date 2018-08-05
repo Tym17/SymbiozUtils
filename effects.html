@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Effects</title>
+    <link rel="stylesheet" href="node_modules/prismjs/themes/prism-tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="output.css" />
+</head>
+
+<body>
+    <div class="title">
+        <div id="title">Effects</div>
+        <button onclick="navigator.quit()" id="close">X</button>
+        <button onClick="navigator.reduce()">_</button>
+        <div style="clear: both;"></div>
+    </div>
+    <div id="effects">
+        <select id="selector" onchange="change()">
+
+        </select>
+        <p>Id for Effect:
+            <span id="efval">?</span>
+        </p>
+    </div>
+
+    <script>
+        const id = i => { return document.getElementById(i); };
+        const package = require('./package.json');
+        const fixtures = require('./js/fixtures.js');
+        const _ = require('lodash');
+        let navigator = new require('./js/navigator.js');
+        let selector = id('selector');
+
+        let effects = fixtures.getEffects();
+        _.forOwn(effects, (eid, effect) => {
+            let opt = document.createElement('option');
+            opt.value = eid;
+            opt.innerHTML = effect;
+            selector.appendChild(opt);
+        });
+
+        let change = () => {
+            id('efval').innerHTML = selector.options[selector.selectedIndex].value;
+        };
+    // You can also require other files to run in this process
+    //require('./renderer.js')
+
+    </script>
+</body>
+
+</html>

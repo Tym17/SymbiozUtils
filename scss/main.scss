@@ -25,4 +25,27 @@ body
     padding-top: 10px;
     padding-bottom: 30px;
     box-sizing: border-box;
+    overflow: auto;
+}
+
+#effects
+{
+    margin-top: -35px;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: -8px;
+    box-sizing: border-box;
+    background: $brown;
+    padding: 10px;
+
+    select
+    {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+[contenteditable] {
+    border-style: Transparent;
+    outline: none;
 }

@@ -18,8 +18,10 @@
   },
   "dependencies": {
     "lodash": "^4.17.10",
+    "misbehave": "^0.3.0",
     "mustache": "^2.3.0",
-    "mysql2": "^1.5.3"
+    "mysql2": "^1.5.3",
+    "prismjs": "^1.15.0"
   },
   "devDependencies": {
     "electron": "^2.0.5"
