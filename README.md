@@ -16,9 +16,16 @@ This tool has been made with Electron and is designed to work best with small da
 * Character stats editor
 
 ## Install & run
+### First run
 Copy **dbconf.json.dist** into **dbconf.json** and set the proper value for your database and then run:
 ```
 yarn install
+yarn sass:build
+yarn start
+```
+
+### Other run
+```
 yarn start
 ```
 

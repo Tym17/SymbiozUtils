@@ -1,6 +1,7 @@
 output.css
 output.css.map
 dbconf.json
+tests
 
 # Logs
 logs
