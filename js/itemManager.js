@@ -39,9 +39,9 @@ let itemManager = {
                         let code = document.querySelector('#code');
                         this.editoresque = new Misbehave(code,
                             {
-                                oninput: () => {
+                                oninput: (content) => {
                                     Prism.highlightElement(code);
-                                    //code.innerHTML = Prism.highlight(code.innerHTML, Prism.languages.markup, 'markup');
+                                    document.editedCode = content;
                                 }
                             }
                         );
@@ -64,7 +64,8 @@ let itemManager = {
             height: 130,
             frame: false,
             resizable: true,
-            center: true
+            center: true,
+            alwaysOnTop: true
         });
 
         if (package.config.debugmode) {
@@ -78,12 +79,8 @@ let itemManager = {
         popup.loadFile('effects.html');
     },
 
-    // TODO
     update: function () {
-        let Kamas = id('Kamas').value.split(' ').join('');
-        let SpellPoints = id('SpellPoints').value.split(' ').join('');
-        let StatsPoints = id('StatsPoints').value.split(' ').join('');
-        let SpawnPointMapId = id('SpawnPointMapId').value;
+        let effects = document.editedCode;
         let uid = id('uid').value;
 
         const con = mysql.createConnection({
@@ -93,16 +90,16 @@ let itemManager = {
             database: db.symbioz.world
         });
 
-        let query = fs.readFileSync(__dirname + '/../sql/update_char.sql', 'utf8');
+        let query = fs.readFileSync(__dirname + '/../sql/update_item.sql', 'utf8');
 
         con.execute(query,
-            [Kamas, SpellPoints, StatsPoints, SpawnPointMapId, uid],
+            [effects, uid],
             (err, results, fields) => {
                 if (err) {
                     navigator.navigate('error', { error: err });
                     return;
                 }
-                navigator.navigate('charfinder', { success: 'Updated' });
+                navigator.navigate('charfinder', { success: 'Item succesfully FM\'d' });
             }
         );
     }
